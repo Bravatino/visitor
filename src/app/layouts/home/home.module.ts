@@ -6,7 +6,7 @@ import { HomeComponent } from './home.component';
 const homeRouting: ModuleWithProviders = RouterModule.forChild([
     {
         path: '',
-        component: HomeComponent 
+        component:  HomeComponent 
     }
 ]);
 
