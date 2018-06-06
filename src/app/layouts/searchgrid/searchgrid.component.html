@@ -1,0 +1,32 @@
+<div>
+  <form role="form">
+    <div class="row">
+      <div class="" style="margin-top: 5px; width: 100%;float: right;">
+          <div class="input-group input-group-lg" style="margin: 10px">
+            <div *ngFor="let eachitem of searchList; let i = index" style="margin-right: 10px">
+              <input type="text" class="form-control" placeholder="{{eachitem}}">
+            </div>
+            <div class="input-group-bt">
+                <button type="submit" class="btn btn-primary mb-2" onclick="onSubmit()">Submit</button>
+            </div>
+          </div>
+      </div>
+    </div>
+  </form>
+</div>  
+<div style="margin:10px" *ngIf="allVisitors?.length > 0">
+  <table class="table table-striped">
+    <tr>
+      <th *ngFor="let eachcol of allcolumns; let i = index">{{eachcol}}</th>          
+    </tr>
+    <tr *ngFor="let eachvisitor of allVisitors; let i = index">
+      <td *ngFor="let eachcol of allcolumns">{{eachvisitor[eachcol]}}</td>
+    </tr>
+  </table>
+</div>
+<div class="row new-button float-right">
+  <button type="submit" class="btn btn-primary mb-2" style="margin-right: 10px" (click)="newEntry($event)">New Entry</button>
+  <button type="submit" class="btn btn-primary mb-2" (click)="onExit($event)">Exit</button>
+</div>
+
+
