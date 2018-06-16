@@ -1,27 +1,30 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../shared/dataservices';
 
-@Component({
-  selector: 'app-searchgrid',
-  templateUrl: './searchgrid.component.html',
-  styleUrls: ['./searchgrid.component.css']
-})
-export class SearchgridComponent implements OnInit {
 
+@Component({
+  selector: 'app-searchgrid-items',
+  templateUrl: './searchgrid-items.component.html',
+  styleUrls: ['./searchgrid-items.component.css']
+})
+export class SearchgridItemsComponent implements OnInit { 
+  
   private allVisitors: JSON = null;
   private allcolumns:any = [];
-
-  constructor(private dataservice: DataService) { }
   searchList:any = [];
 
+
+  constructor(private dataservice: DataService) { }
+
   ngOnInit() {
+
     this.searchList = ["visitor name", "visitor id", "date time", "reason"];
     this.dataservice.getAllVisitors();
 
     this.dataservice.allVisitorJson.subscribe(
       (data) =>{
         this.allVisitors = data;
-        this.allcolumns = this.getAllColumns();
+        this.allcolumns=  this.getAllColumns();
       },
       (err) => {
         console.log("error in getting visitors", err );
@@ -29,6 +32,7 @@ export class SearchgridComponent implements OnInit {
     );
 
   }
+
   getAllColumns(){
     var columns = [];
     for(var vindex in this.allVisitors){
@@ -43,13 +47,5 @@ export class SearchgridComponent implements OnInit {
 
     return columns;
   }
-  onSubmit(){
-    console.log("submit");
-  }
-  newEntry(e){
-    console.log("new entry", e);
-  }
-  onExit(e){
-    console.log("exit");
-  }  
+
 }

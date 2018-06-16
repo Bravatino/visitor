@@ -17,4 +17,15 @@
 
 .visitor{
     min-height: 20px;
+    margin: 20px;
+}
+
+.staff{
+    min-height: 20px;
+    margin: 20px;
+}
+
+.exit{
+    min-height: 20px;
+    margin: 20px;
 }

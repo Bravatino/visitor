@@ -3,16 +3,9 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { SearchgridComponent } from './searchgrid.component';
 
-const gridRouting: ModuleWithProviders = RouterModule.forChild([
-    {
-        path: 'grid',
-        component: SearchgridComponent 
-    }
-]);
 
 @NgModule({
     imports: [
-        gridRouting
     ],
     declarations: [
         SearchgridComponent
