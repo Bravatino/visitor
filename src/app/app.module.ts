@@ -17,6 +17,7 @@ const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   {path: 'visitor', component: SearchgridComponent},
   {path: 'visitor/inputform', component: InputformComponent},
+  {path: 'inventory', component: SearchgridItemsComponent},
   {path: 'staff', component: SearchgridItemsComponent},
 ];
 

@@ -4,10 +4,10 @@
       <div class="" style="margin-top: 5px; width: 100%;float: right;">
           <div class="input-group input-group-lg" style="margin: 10px">
             <div *ngFor="let eachitem of searchList; let i = index" style="margin-right: 10px">
-              <input type="text" class="form-control" placeholder="{{eachitem}}">
+              <input id="searchentry{{i}}" type="text" class="form-control" placeholder="{{eachitem}}">
             </div>
             <div class="input-group-bt">
-                <button type="submit" class="btn btn-primary mb-2" onclick="onSubmit()">Submit</button>
+                <button type="button" class="btn btn-primary mb-2" (click)="onSubmit($event)">Submit</button>
             </div>
           </div>
       </div>

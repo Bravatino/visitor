@@ -19,7 +19,8 @@ export class DataService {
 
         this.apiservice.getAllVisitors().subscribe(
             data => {
-                this.setallVisitorJsonS(data.data);
+                console.log(data);
+                this.setallVisitorJsonS(data);
             },
             err =>{
                 console.log("got error", err);

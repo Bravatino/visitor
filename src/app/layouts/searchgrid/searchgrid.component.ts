@@ -43,8 +43,13 @@ export class SearchgridComponent implements OnInit {
 
     return columns;
   }
-  onSubmit(){
-    console.log("submit");
+  onSubmit(event){
+    event.preventDefault();
+    var search1 = <HTMLInputElement>document.getElementById("searchentry1");
+    var search2 = <HTMLInputElement>document.getElementById("searchentry2");
+    var search3 = <HTMLInputElement>document.getElementById("searchentry3");
+    var search4 = <HTMLInputElement>document.getElementById("searchentry4");
+    console.log("value1=", search1.value, search2.value, search3.value);
   }
   newEntry(e){
     console.log("new entry", e);
