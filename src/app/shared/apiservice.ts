@@ -13,10 +13,10 @@ export class ApiService {
     // }
 
     getAllVisitors(){
-        var endpoint = "https://localhost:44319/api/visitor/get_all"
-        return this.httpclient.get(endpoint);
-        // var filename = "/assets/" + "visitor.json" 
-        // return this.httpclient.get(filename);   
+        // var endpoint = "https://localhost:44319/api/visitor/get_all"
+        // return this.httpclient.get(endpoint);
+        var filename = "/assets/" + "visitor.json" 
+        return this.httpclient.get(filename);   
     }
 
     getAllItems(){

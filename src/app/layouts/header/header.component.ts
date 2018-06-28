@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {environment } from '../../../environments/environment';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -7,14 +8,18 @@ import {environment } from '../../../environments/environment';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  
+  private router: Router;
 
-  constructor() { }
+  constructor(router: Router) { 
+    this.router = router;  
+  }
   logoimg : string = ""; 
   systime : number = Date.now();
 
   ngOnInit() {
     this.logoimg = environment.deployurl + '/assets/' + 'logo-ineight.png';
-    console.log(this.systime);
+    console.log(this.router.url);
     this.datetimer();
   }
 
